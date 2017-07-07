@@ -333,15 +333,13 @@ visibility modifiers in Kotlin are similar to those in Java. You have the same p
     But the default visibility is different: if you omit a modifier, the declaration becomes public.
 
 
-    As an alternative, Kotlin offers a new visibility modifier, internal, which means "visible inside a module."
 
-
-    |Modifier                               | Class member                            |Top-level declaration   |
-
-    |public (default)                       |Visible everywhere                       |Visible every where
-    |internal                               |Visible in a module                      |Visible in a module
-    |protected                              |Visible in sub classes                   |  --
-    |private                                |Visible in a class                       | Visible in a file
+|Modifier                               | Class member                            |Top-level declaration   |
+|---------------------------------------|:---------------------------------------:|-----------------------:|
+|public (default)                       |Visible everywhere                       |Visible every where
+|internal                               |Visible in a module                      |Visible in a module
+|protected                              |Visible in sub classes                   |  --
+|private                                |Visible in a class                       | Visible in a file
 
 
 **Class**
