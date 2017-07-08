@@ -42,7 +42,7 @@ var a: String = "abc"
 a = null // compilation error
 
 ```
-for nullable objects as you don't initialize them you MUST declare class type of object too.
+for nullable objects if you don't initialize them you MUST declare class type of object too.
 
 If you want to access the property on null value, that would not be safe, and the compiler reports an error:
 
@@ -71,7 +71,7 @@ Sample:
 
 ```
 fun sampleFunction(name: String,
-                       lastName: String): Int {
+                   lastName: String): Int {
         return name.length + lastName.length
     }
 ```
@@ -188,7 +188,7 @@ fun sampleIf() {
 
 ```
 
-while/do while in kotlin is similar to Java. they are is `statement` (you can't return a value)
+while/do while in kotlin is similar to Java. those are `statement` (you can't return a value)
 
 ```
 fun sampleWhile() {
@@ -245,7 +245,7 @@ fun sampleFor() {
     }
 ```
 
-you can replace `for` statement with extension method in collections like:
+you can replace `for` statement with extension methods in collections like:
 
 ```
 stringList.forEach { println("$it ${it.contains("2")}") }
@@ -304,7 +304,7 @@ fun sampleWhen() {
 
 In above sample we see one another great feature in Kotlin. we can check type of any object in Kotlin with `is` ( like `instanceof` in java) and you can cast your object with `as`.
 
-Kotlin has smart cast feature,, that means if you check one object type, in that block you don't need to cast it to use method of it:
+Kotlin has smart cast feature, that means if you check one object type, in that block you don't need to cast it to use methods on it:
 
 ```
  var anyObject : Any = "anyObject"
@@ -331,6 +331,7 @@ if (anyObject is String) {
 
 visibility modifiers in Kotlin are similar to those in Java. You have the same public, protected, and private modifiers.
     But the default visibility is different: if you omit a modifier, the declaration becomes public.
+in Kotlin you don't hava package private that exists in java, instead of it Kotlin introduce **Internal**
 
 
 
@@ -345,13 +346,13 @@ visibility modifiers in Kotlin are similar to those in Java. You have the same p
 **Class**
 
 
-You can create declare your class as follow:
+You can declare your class as follow:
 
 ```
 class SimpleClass public constructor() {}
 ```
 
-if your constructor is public and you don't want change visibility of that you can omit it, if your constructor don't get any parameter you can remove `()` to. so simple class in Kotlin is like:
+if your constructor is public and you don't want change visibility of that you can omit it, if your constructor don't get any parameter you can remove `()` too. so simple class in Kotlin is like:
 
 ```
 class SimpleClass
@@ -365,7 +366,7 @@ class SimpleClass {
 }
 ```
 
-You can define your class with parameter like follow:
+You can define your class with constocture like follow:
 
 ```
 class ClassWithConstructor(var name: String, val age: Int)
@@ -381,7 +382,7 @@ classObj.name = "newName"
 
 Sometimes you need to declare secondary constructor, it's very rare in Kotlin because with default parameter in Kotlin you don't need overload constructor. But, if you want to have it you can create your class like follow:
 
-PS: If the class has a primary constructor, each secondary constructor needs to delegate to the primary constructor, either directly or indirectly through another secondary constructor(s). Delegation to another constructor of the same class is done using the this keyword:
+PS: If the class has a primary constructor, each secondary constructor needs to delegate to the primary constructor, either directly or indirectly through another secondary constructor(s). Delegation to another constructor of the same class is done using the `this` keyword:
 
 ```
 class SecondaryConstructor(name: String, lastName: String, age: Int) {
@@ -432,13 +433,13 @@ class ClassWithConstructorAndInit(var name: String, val age: Int) {
     init {
          println("this will call after primary constructor")
         // if you have more than one constructor, and you create object via second constructor
-        // this will with following priority
+        // this block will run with following priority
         // 1- primary constructor, 2- init block, 3- secondary constructor block
         }
     }
 ```
 
-Another great feature of Kotlin is `Data` class class with some default method.
+Another great feature of Kotlin is `Data` class with some default method.
 
 if you declare your class as `data` the compiler automatically derives the following members from all properties declared in the primary constructor:
 
@@ -484,7 +485,7 @@ The key benefit of using sealed classes comes into play when you use them in a w
 
 **Extension**
 
-Sometimes we want to add some method to existing class, but we don't want to create sub class and use that in hole project, in Kotlin you can simply use `Extension` method|property. so extension methods are methods that we add to existing class without create sub class, you can create extension method| property like follow:
+Sometimes we want to add some method to existing class, but we don't want to create sub class and use custom class in hole project, in Kotlin you can simply use `Extension` method|property. so extension methods are methods that we add to existing class without create sub class, you can create extension method| property like follow:
 
 ```
 fun String.getCurrency() {
@@ -496,7 +497,7 @@ val String.lastCharIndex: Int
 
 ```
 
-in above sample we create one method and one property to String class, and we can use it like:
+in above sample we create one method and one property into String class, and we can use it like:
 
 ```
 val name : String = "Name"
@@ -516,7 +517,7 @@ abstract class MouseAdapter {
         abstract fun mouseEntered(e: Point)
     }
 
-fun testSingleton() {
+fun testAnonymousClass() {
 
     // call like static method
     SingleObject.singletonMethod()
