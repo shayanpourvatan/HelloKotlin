@@ -1,5 +1,7 @@
 In this repo we want to see some basic code in Kotlin language 
 
+You can see my presentation video in [this link](https://www.youtube.com/watch?v=WqzjXYjU5Yw&spfreload=5)
+
 
 **Variables**
 
